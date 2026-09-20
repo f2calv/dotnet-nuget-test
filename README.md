@@ -1,5 +1,7 @@
 # GitHub Action .NET NuGet Test
 
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=f2calv_dotnet-nuget-test&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=f2calv_dotnet-nuget-test)
+
 This repository is a small .NET 10 package and test project used to validate the account's reusable
 NuGet build, test, pack, Trusted Publishing and release workflows.
 
