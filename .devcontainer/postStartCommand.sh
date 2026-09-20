@@ -1,9 +1,7 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-echo "postStartCommand.sh"
-echo "-------------------"
+# Reports the .NET SDK version whenever the development container starts.
+
+set -euo pipefail
 
 dotnet --version
-pre-commit autoupdate
-
-echo "Done"
