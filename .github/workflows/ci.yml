@@ -16,11 +16,14 @@ on:
         type: boolean
         description: Push a pre-release package?
         default: false
+      execute-tests:
+        type: boolean
+        description: Execute tests?
+        default: true
   push:
     branches: [main]
   pull_request:
     branches: [main]
-    types: [opened, synchronize, reopened]
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
@@ -62,6 +65,7 @@ jobs:
           #become a literal, or the token exchange fails with an opaque 401.
           nuget-user: ${{ github.repository_owner }}
           configuration: ${{ inputs.configuration }}
+          execute-tests: ${{ inputs.execute-tests }}
           push-preview: ${{ inputs.push-preview }}
           version: ${{ needs.versioning.outputs.version }}
 
